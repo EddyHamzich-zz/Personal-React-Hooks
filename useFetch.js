@@ -14,7 +14,8 @@ export const useFetch = (url) => {
                 setLoading(false);
             }
             catch (error) {
-                setError(error)
+                setError(error);
+                console.log("useFetch error: ", error);
                 setLoading(true);
             }
         })()
@@ -32,11 +33,9 @@ export default function App() {
     
     return (
         <div>
-            { loading ? (<div>...loading{error && console.log(error)}</div>) : (<div>{data.title}</div>) }
+            { loading ? (<div>...loading</div>) : (<div>{data.title}</div>) }
         </div>
     );
 };
-
-// "error &&" checks if error actually exists (truthy/falsy trick)
 
 */
