@@ -28,7 +28,7 @@ export const useFetch = (url) => {
 
 export default function App() {
     
-    const { loading, data, error } = useFetch("https://jsonplaceholder.typicode.com/todos/1");
+    const { loading, data, error } = useFetch(`https://jsonplaceholder.typicode.com/todos/${Math.floor(Math.random() * 200)}`);
     
     return (
         <div>
