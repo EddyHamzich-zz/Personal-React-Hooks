@@ -19,8 +19,7 @@ export const useFetch = (url) => {
                 setLoading(true);
             }
         })()
-      //eslint-disable-next-line
-    }, []);
+    }, [url]);
   
     return { loading, data, error };
 };
@@ -29,7 +28,7 @@ export const useFetch = (url) => {
 
 export default function App() {
     
-    const { loading, data, error } = useFetch(`https://jsonplaceholder.typicode.com/todos/${Math.floor(Math.random() * 200)}`);
+    const { loading, data, error } = useFetch(`https://jsonplaceholder.typicode.com/todos/1`);
     
     return (
         <div>
